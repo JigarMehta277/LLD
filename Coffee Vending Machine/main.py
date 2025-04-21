@@ -61,8 +61,8 @@ class coffeeMachine:
     
     def dispense_coffee(self, coffee, payment):
         if payment.get_amount() >= coffee.get_price():
-            if self.has_enough_ingredients(coffee):
-                self.update_ingredients(coffee)
+            if self._has_enough_ingredients(coffee):
+                self._update_ingredients(coffee)
                 print(f"Dispensing {coffee.get_name()}...")
                 change = payment.get_amount() - coffee.get_price()
                 if change > 0:
