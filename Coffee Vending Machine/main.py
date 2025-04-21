@@ -26,6 +26,22 @@ class coffeeMachine:
             self.ingredients["Water"]: 1
         }
         self.coffee_menu.append(coffee("Espresso", 2.5, espresso_recipe))
+
+        chai_recipe = {
+            self.ingredients["Indian chai patti"]: 1,
+            self.ingredients["Milk"]: 2,
+            self.ingredients["Masala"]: 1
+        }
+        self.coffee_menu.append(coffee("Chai", 5.2, chai_recipe))
+
+        cappuccino_recipe = {
+            self.ingredients["Coffee"]: 1,
+            self.ingredients["Water"]: 1,
+            self.ingredients["Milk"]: 1
+        }
+        self.coffee_menu.append(coffee("Cappuccino", 3.0, cappuccino_recipe))
+
+        
     
 
 
