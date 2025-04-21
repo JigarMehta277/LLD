@@ -48,6 +48,13 @@ class coffeeMachine:
         self.ingredients["Indian chai patti"] = ingredient("Indian chai patti", 10)
         self.ingredients["Masala"] = ingredient("Masala", 10)
 
+    def display_menu(self):
+        print("Coffee Menu:")
+        for coffee in self.coffee_menu:
+            print(f"{coffee.get_name()} - ${coffee.get_price()}")
+
+    
+
     
 
 
