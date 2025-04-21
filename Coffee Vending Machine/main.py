@@ -53,6 +53,14 @@ class coffeeMachine:
         for coffee in self.coffee_menu:
             print(f"{coffee.get_name()} - ${coffee.get_price()}")
 
+    def select_coffee(self, coffee_name):
+        for coffee in self.coffee_menu:
+            if coffee.get_name().lower() == coffee_name.lower():
+                return coffee
+        return None
+    
+    
+
     
 
     
