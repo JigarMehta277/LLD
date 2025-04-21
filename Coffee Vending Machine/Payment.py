@@ -1,13 +1,6 @@
-class Ingredient:
-    def __init__(self, name, quantity):
-        self.name = name
-        self.quantity = quantity
+class payment:
+    def __init__(self, amount):
+        self.amount = amount
 
-    def get_name(self):
-        return self.name
-    
-    def get_quantity(self):
-        return self.quantity
-    
-    def update_quantity(self, amount):
-        self.quantity += amount
+    def get_amount(self):
+        return self.amount

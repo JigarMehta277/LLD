@@ -1,4 +1,4 @@
-class Coffee:
+class coffee:
     def __init__(self, name, price, recipe):
         self.name = name
         self.price = price
