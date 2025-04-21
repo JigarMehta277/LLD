@@ -41,7 +41,20 @@ class coffeeMachine:
         }
         self.coffee_menu.append(coffee("Cappuccino", 3.0, cappuccino_recipe))
 
-        
+    def _initialize_ingredients(self):
+        self.ingredients["Coffee"] = ingredient("Coffee", 10)
+        self.ingredients["Water"] = ingredient("Water", 10)
+        self.ingredients["Milk"] = ingredient("Milk", 10)
+        self.ingredients["Indian chai patti"] = ingredient("Indian chai patti", 10)
+        self.ingredients["Masala"] = ingredient("Masala", 10)
+
+    
+
+
+
+
+
+
     
 
 
