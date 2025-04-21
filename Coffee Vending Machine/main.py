@@ -59,7 +59,34 @@ class coffeeMachine:
                 return coffee
         return None
     
-    
+    def dispense_coffee(self, coffee, payment):
+        if payment.get_amount() >= coffee.get_price():
+            if self.has_enough_ingredients(coffee):
+                self.update_ingredients(coffee)
+                print(f"Dispensing {coffee.get_name()}...")
+                change = payment.get_amount() - coffee.get_price()
+                if change > 0:
+                    print(f"Please collect your change: ${change}")
+                else:
+                    print(f"Insufficient ingredients to make {coffee.get_name()}")
+
+            else:
+                print(f"Insufficient ingriedents to make {coffee.get_name()}")
+
+        else:
+            print(f"Insufficient payment for {coffee.get_name()}")
+
+    def _has_enough_ingredients(self, coffee):
+        for ingredient, required_quantity in coffee.get_recipe().items():
+            if ingredient.get_quantity() < required_quantity:
+                return False
+        return True
+
+    def _update_ingredients(self, coffee):
+        for ingredient, required_quantity in coffee.get_recipe().items():
+            ingredient.update_quantity(-required_quantity)
+            if ingredient.get_quantity() < 3:
+                print(f"Low inventory alert: {ingredient.get_name()}")
 
     
 
