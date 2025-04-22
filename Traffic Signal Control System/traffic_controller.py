@@ -9,17 +9,16 @@ class TrafficController:
     _lock = threading.Lock()
 
     def __new__(cls):
-        with cls.lock:
+        with cls._lock:
             if cls._instance is None:
                 cls._instance = super().__new__(cls)
                 cls._instance.roads = {}
         return cls._instance
-    
 
     @classmethod
     def get_instance(cls):
         return cls()
-    
+
     def add_road(self, road: Road):
         self.roads[road.id] = road
 
@@ -49,5 +48,4 @@ class TrafficController:
             traffic_light = road.get_traffic_light()
             traffic_light.change_signal(Signal.GREEN)
             # Perform emergency handling logic
-    
-
+            # ...
